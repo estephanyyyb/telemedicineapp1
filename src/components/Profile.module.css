@@ -1,13 +1,13 @@
 .profile-box {
     margin: 30px 30px 30px 30px;
     /* height: 310px; */
-    height: 1950px;
+    height: 2050px;
     border: 1px solid grey;
   }
 
 .profile-textbox {
     margin:50px 40px 40px 40px;
-    height: 1850px;
+    height: 1900px;
     background-color: #e6edf6;
     border: 1px solid black;
     padding:24px;
@@ -16,13 +16,13 @@
 .profile-box2 {
     margin: 30px 30px 30px 30px;
     /* height: 310px; */
-    height: 1450px;
+    height: 1500px;
     border: 1px solid grey;
   }
 
 .profile-textbox2 {
     margin:50px 40px 40px 40px;
-    height: 1350px;
+    height: 1400px;
     background-color: #e6edf6;
     border: 1px solid black;
     padding:24px;

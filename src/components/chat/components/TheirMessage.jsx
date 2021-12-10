@@ -7,7 +7,6 @@ const TheirMessage = ({lastMessage, message}) => {
 			{isFirstMessageByUser && (
 				<div 
 					className={styles['message-avatar']}
-					style={{ backgroundImage: message.sender && `url(${message.sender.avatar})` } }
 				/>
 			)}
 			{message?.attachments.length > 0 
@@ -19,7 +18,7 @@ const TheirMessage = ({lastMessage, message}) => {
 					style={{ marginLeft: isFirstMessageByUser ? '4px' : '48px'}}
 				/>
 		) :(
-			<div className={styles['message']} style={{ float: 'left', backgroundColor: '#CABCDC', marginLeft: isFirstMessageByUser ? '4px' : '48px'}}>
+			<div className={styles['message']} style={{ float: 'left', backgroundColor: '#7ec4e8', marginLeft: isFirstMessageByUser ? '4px' : '48px'}}>
 				{message.text}
 			</div>
 	)

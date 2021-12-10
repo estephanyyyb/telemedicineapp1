@@ -8,12 +8,14 @@ class Profile extends React.Component {
     constructor(props){
         super(props)
         this.state = {
+            email: props.userData.email,
             address: props.userData.address,
             phone_number: props.userData.phone_number,
             city: props.userData['custom:city'],
             state: props.userData['custom:state'],
             zipcode: props.userData['custom:zc'],
             reveal: false,
+            revealEmail: false,
             revealPhone: false,
         }    
     }
@@ -22,6 +24,7 @@ class Profile extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault()
         const data = this.state
+        this.props.userData.email = data.email
         this.props.userData.address = data.address
         this.props.userData.address = data.phone_number
         this.props.userData['custom:city'] = data['custom:city']
@@ -39,6 +42,13 @@ class Profile extends React.Component {
             [event.target.name]: event.target.value,
         })
     };
+
+    operationEmail = (event) => {
+        event.preventDefault()
+        this.setState({
+            revealEmail:!this.state.revealEmail
+        })
+    }
 
     operation = (event) => {
         event.preventDefault()
@@ -58,15 +68,16 @@ class Profile extends React.Component {
     changeLabel = (event) => {
         event.preventDefault()
         const data = this.state
+        document.getElementById("email_label").innerHTML = data.email
         document.getElementById("address_label").innerHTML = (data.address + ", " + data.city + ", " + data.state + ", " + data.zipcode).toUpperCase();
         document.getElementById("phone_number_label").innerHTML = data.phone_number
     }
 
 
     render() {
-        const {address, phone_number, city, state, zipcode, reveal} = this.state
+        const {email, address, phone_number, city, state, zipcode, reveal} = this.state
         console.log('ADDRESS', this.state)
-        updateUser(address,phone_number, city, state, zipcode)
+        updateUser(email,address,phone_number, city, state, zipcode)
         return (
             <div>
                 <div>
@@ -106,8 +117,21 @@ class Profile extends React.Component {
                                     <h4>Contact Information</h4>
                                     <br/>
                                     <h5>Email Address</h5>
-                                    <label className={profileStyle.label}>{(this.props.userData.email).toUpperCase()}</label>
+                                    <label className={profileStyle.label} id="email_label">{(this.props.userData.email).toUpperCase()}</label>
                                     <br/>
+                                    <br/>
+                                    <div>
+                                        {
+                                            this.state.revealEmail?
+                                            <div className="">
+                                                <label className={profileStyle.label} for="inputEmail">Edit Email</label>
+                                                <input type="text" className="form-control" id="inputEmail" value={email} name="email" placeholder={email} onChange={this.handleInputChange}/>
+                                            </div>
+                                            :""
+                                        }
+                                        <br/>
+                                        { <button className={profileStyle['edit-dropdown']} onClick={this.operationEmail}>Edit Email</button> }
+                                    </div>
                                     <br/>
                                     <hr/>
 
@@ -174,9 +198,10 @@ class Profile extends React.Component {
     }
 }
 
-async function updateUser(address, phone_number, city, state, zipcode) {
+async function updateUser(email,address, phone_number, city, state, zipcode) {
     const user = await Auth.currentAuthenticatedUser();
     await Auth.updateUserAttributes(user, {
+    'email': email,
     'address': address,
     'phone_number': phone_number,
     'custom:city': city,

@@ -71,9 +71,9 @@ const App = () => {
       )
     }
     else if (user['signInUserSession']['accessToken']['payload']['cognito:groups'][0] === 'patients') {
-      // if(user.attributes.sub == 'f4a29157-2edb-47fa-84fe-5f0028c4e51e') { 
-      //   console.log('yes');
-      //   patientBucketConditional = "/recordings/patient2"; }
+      if(user.attributes.sub == '3e34a382-1462-43bf-926a-4a66039f7205') { 
+        console.log('yes');
+        patientBucketConditional = "/recordings/patient2"; }
       // if(user.attributes.sub == '8814cfec-5190-4d0c-b5c4-9ba12f08856e'){
       //   console.log('This is for patient Taylor Swift');
       //   patientReportBucketConditional = '/reports/patient1reports'
