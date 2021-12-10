@@ -1,4 +1,6 @@
-body {
+/* body {
+  background-color: #7EC4E8;
+  
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -11,3 +13,40 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+ */
+
+ body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* temporary color */
+  /* background-color: #7EC4E8; */
+  background-color: white;
+  /* border: 1px solid grey; */
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+:root{
+  --amplify-primary-color: #7ec4e8; /*button color*/
+  --amplify-primary-contrast: black; /*button text colot*/
+  --amplify-primary-tint: black; /* hover over link */
+  --amplify-primary-shade: gray; /* link color change */
+  --amplify-secondary-color: black; /* this is for text */
+  --amplify-secondary-contrast: white; /* input text box*/
+  /* --amplify-secondary-tint: red; /*idk what this does */
+/*   --amplify-secondary-shade: red; idk what this does */
+  --amplify-grey: black; /*have an account? no account? */
+  --amplify-light-grey: gray;
+  --amplify-white : #d5f4ff; /*login/create account box*/
+}
+
+

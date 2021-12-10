@@ -1,0 +1,47 @@
+.tableFixHead {
+    overflow-y: auto;
+    height: 600px;
+}
+
+.tableFixHead thead th {
+    position: sticky;
+    top: 0;
+}
+
+thead {
+    font-weight: bold;
+}
+
+.tableDiv {
+    overflow: auto;
+    text-align: center;
+    margin-left: 50px;
+    margin-right: auto;
+    border: 2px solid blue;
+}
+table {
+	/* border: 2px solid blue; */
+	text-align: center;
+    width: 100%;
+    margin-top: 30px;
+}
+
+td, th {
+    background-color: white;
+    color: black;
+    border: 1px solid #7ec4e8;
+    text-align: center;
+    height: 20px;
+    
+}
+
+label {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    padding: 5px;
+}
+
+a {
+    color: black;
+}

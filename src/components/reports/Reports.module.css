@@ -1,0 +1,203 @@
+/* . {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+} */
+
+.main1{
+    margin: 30px 30px 30px 30px;
+    align-items: center;
+    font-size: 50px;
+    text-decoration:underline  #7ec4e8;
+    font-weight: 800;
+	
+}
+
+.name2{
+	/* font-weight:bold;  */
+	font-weight: 500;
+    font-size: 43px;
+    text-align: center;
+	font-family: monospace;
+	margin-top: 30px;
+}
+
+/* .l1{
+	font-size: 20px;
+	margin-left: 180px;
+	margin-top: 20px;
+	
+
+}
+
+td{
+	padding-right: 40px;
+	margin-right: 100px;
+}
+th{
+	padding-right: 40px;
+	margin-right: 100px;
+} */
+
+
+
+.uploadStuff{
+	margin-top: 30px;
+	/* padding-top: 100px; */
+}
+.columnsMain1{
+    height: 700px;
+    margin: 30px 30px 30px 30px;
+    border: 1px solid grey;
+}
+.columns1{
+    font-weight:bold; 
+    font-size: 36px;
+    text-align: center;
+
+}
+
+.uploadButton2 {
+	height: 40px;
+	width: 550px;
+	font-size: 20px;
+	background-color: #7ec4e8;
+	border: 1px solid grey;
+	font-weight: bold;
+	margin-bottom: 40px;
+
+
+
+}
+
+
+
+
+.urlLink{
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.item1 { 
+	grid-area: header;
+	font-size: 40px;
+	background-color: white;
+	
+}
+.item2 { 
+	grid-area: menus; 
+	margin: 40px 40px 40px 40px;
+
+	
+}
+
+.item3 { 
+	display: grid;
+	grid-template-areas:'profile profile profile profile profile profile'
+		'report ';
+	grid-area: profile;
+	padding: 10px; 
+	width: 100%;
+	height: 100%;
+	/* background-color: #7EC4E8; */
+	font-size: 25px;
+}
+
+.item3 > div {
+	text-align: center;
+	padding: 10px 0;	
+	
+	
+}
+.item4 { grid-area: labs; }
+.item5 { grid-area: medicine; }
+.item6 { grid-area: notes; }
+
+/* .grid-container {
+	display: grid;
+	grid-template-areas:
+		'header header header header header header'
+		'menus menus menus menus menus menus'
+		'profile profile profile profile profile profile'
+		'labs labs labs medicine medicine medicine'
+		'labs labs labs medicine medicine medicine'
+		'labs labs labs notes notes notes'
+		'labs labs labs notes notes notes';
+	grid-gap: 10px;
+	background-color: #7EC4E8;
+	padding: 10px;
+	 width:98.5vw; 
+	width: 100%;
+	 height: 97vh; 
+	height: 100%;
+	
+}
+
+.grid-container > div {
+	background-color: #e6edf6;
+	text-align: center;
+	padding: 10px 0;	
+	
+} */
+
+.nav li{
+	display: inline-block;
+	padding: 40px;
+	margin: 20px;
+	font-size: 30px;
+	word-spacing: 40px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* body {
+	font-family: Arial, sans-serif;
+} */
+
+.tablecell1{
+	
+	
+	background-color: #7ec4e8;
+
+}
+
+
+
+
+.patient-info-table thead {
+	font-weight: bold;
+}
+
+.patient-info-table table {
+	border: 2px solid #7ec4e8;
+	width: 100%;
+        height: 50%;
+		
+		
+}
+
+.patient-info-table table th td {
+	background-color: white;
+	color: black;
+	border: 1px solid #7ec4e8;
+	text-align: center;
+	
+}
+
+label {
+	display: inline-block;
+	width: 100px;
+	text-align: right;
+	padding: 5px;
+}
+.notes {
+	background-color: white;
+	width: 75%;
+	height: 75%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+}
+a {
+	color: black;
+}
