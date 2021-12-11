@@ -10,6 +10,7 @@ export default class PageHeader extends React.Component {
   constructor(props) {
     super(props);
   }
+  
 
   render() {
     if(this.props.currentUser['signInUserSession']['accessToken']['payload']['cognito:groups'][0] === 'doctors') {
@@ -60,6 +61,7 @@ const RenderDoctorView = (props) => {
 }
 
 const RenderPatientView = (props) => {
+  var reportUrl = window.$bucketPath;
   return (
     <div className="App">
       <nav className="navbar navbar-light bg-light">
@@ -83,10 +85,10 @@ const RenderPatientView = (props) => {
             </div>
           </nav>
           <div className={`d-flex justify-content-evenly navbar ${style['primary-color']}`}>
-            <a type="button" className={`btn btn-secondary ${style['btn-sm']}`} href="/report/patient/">Reports</a>
+            <a type="button" className={`btn btn-secondary ${style['btn-sm']}`} href="/report/patient2">Reports</a>
             <a type="button" className={`btn btn-secondary ${style['btn-sm']}`} href="/chat" >Chat</a>
             <a type="button" className={`btn btn-secondary ${style['btn-sm']}`} href="/appointments">Appointments</a>
-            <a type="button" className={`btn btn-secondary ${style['btn-sm']}`} href="/recordings/patient">Recordings</a>
+            <a type="button" className={`btn btn-secondary ${style['btn-sm']}`} href="/recordings/patient2">Recordings</a>
             <span className={`navbar-brand mb-0 ${style.h1}`}></span>
           </div>
     </div>

@@ -28,6 +28,7 @@ import ListOfPatientReports from './components/reports/ListOfPatientReports';
 import DoctorRecordings from './components/recordings/DoctorRecordings';
 import PatientRecordings from './components/recordings/PatientRecordings';
 import Patient2Recordings from './components/recordings/Patient2Recordings';
+import PatientReport2 from './components/reports/reportpatient2';
 import Appointments from './components/appointments/Appointments';
 import Profile from './components/Profile';
 import ListUsers from './listusers';
@@ -44,6 +45,8 @@ const App = () => {
   const [authState, setAuthState] = React.useState();
   const [user, setUser] = React.useState();
   window.$user = user;
+  window.$recording = "/recordings/patient";
+
 
   React.useEffect(() => {
 
@@ -55,7 +58,9 @@ const App = () => {
   }, []);
 
   var patientBucketConditional = "/recordings/patient";
-  var patientReportBucketConditional = '/reports/patient';
+  var reportBucketConditional = '/report/patient';
+
+  
 
   function Home() {
     if ((user['signInUserSession']['accessToken']['payload']['cognito:groups'] === undefined) || (user['signInUserSession']['accessToken']['payload']['cognito:groups'] === 0)) {
@@ -71,9 +76,12 @@ const App = () => {
       )
     }
     else if (user['signInUserSession']['accessToken']['payload']['cognito:groups'][0] === 'patients') {
-      if(user.attributes.sub == '3e34a382-1462-43bf-926a-4a66039f7205') { 
+      if(user.attributes.sub == '8d01e787-f734-440b-b23a-ed3da9c3bc6c') { 
         console.log('yes');
-        patientBucketConditional = "/recordings/patient2"; }
+        patientBucketConditional = "/recordings/patient2";
+        reportBucketConditional = "/report/patient2";
+        window.$recording = patientBucketConditional;
+        window.$bucketPath = "/report/patient2"; }
       // if(user.attributes.sub == '8814cfec-5190-4d0c-b5c4-9ba12f08856e'){
       //   console.log('This is for patient Taylor Swift');
       //   patientReportBucketConditional = '/reports/patient1reports'
@@ -101,7 +109,7 @@ const App = () => {
             </div>
           </nav>
           <div className={`d-flex justify-content-evenly navbar ${style['primary-color']}`}>
-            <a type="button" className={`btn btn-secondary ${style['btn-sm']}`} href="/report/patient/">Reports</a>
+            <a type="button" className={`btn btn-secondary ${style['btn-sm']}`} href={reportBucketConditional}>Reports</a>
             <a type="button" className={`btn btn-secondary ${style['btn-sm']}`} href="/chat" >Chat</a>
             <a type="button" className={`btn btn-secondary ${style['btn-sm']}`} href="/appointments">Appointments</a>
             <a type="button" className={`btn btn-secondary ${style['btn-sm']}`} href={patientBucketConditional}>Recordings</a>
@@ -115,7 +123,7 @@ const App = () => {
               <div className={style.dot}><img id={style['center-icons1']} src={reportsIcon} alt="" width="130" height="100" />
               </div>
               <div className={style.textbox}>
-                <a href="/report/patient/"><h3 className={style['h3']}>View Your Reports</h3></a>
+                <a href={reportBucketConditional}><h3 className={style['h3']}>View Your Reports</h3></a>
               </div>
             </div>
           </div>
@@ -381,9 +389,12 @@ const App = () => {
           <Route path="/report/patient/">
             <PatientReport currentUser={user} patientData={user.attributes} />
           </Route>
-          <Route path="/reports">
-            <ListOfPatientReports currentUser={user} />
+          <Route path="/report/patient2">
+            <PatientReport2 currentUser={user} patientData={user.attributes} />
           </Route>
+          {/* <Route path="/reports">
+            <ListOfPatientReports currentUser={user} />
+          </Route> */}
           <Route path="/appointments">
             <Appointments currentUser={user} patientData={user.attributes} />
           </Route>
