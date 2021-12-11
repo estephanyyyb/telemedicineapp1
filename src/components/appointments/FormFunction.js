@@ -108,7 +108,7 @@ const FormFunction = (props) => {
 
     return (
         <form style={{margin:15, display:'flex', flexWrap:'wrap'}} onSubmit={handleSubmit}>
-          <div>
+          <div style={{padding: 10}}>
               <label>Date: </label>
               <input type="datetime-local" name="date" defaultValue="2021-12-20T08:00" style={{maxWidth:300}} onChange={handleChange("date")}></input>
           </div><div style={{width:'100%'}}/>
@@ -116,21 +116,21 @@ const FormFunction = (props) => {
               <label>Time: </label>
               <input type="time" name="time" value={this.state.time} style={{maxWidth:300}} onChange={this.handleChange}></input>
           </div><div style={{width:'100%'}}/> */}
-          <div style={{marginTop:0}}>
+          <div style={{marginTop:0, padding: 10}}>
               <label>Doctor: </label>
               <input type="text" name="doctor"  style={{maxWidth:300}} onChange={handleChange("doctor")}></input>
           </div><div style={{width:'100%'}}/>
-          <div style={{marginTop:0}}>
+          <div style={{marginTop:0, padding: 10}}>
               <label>Reason: </label>
               <input type="text" name="reason"  style={{maxWidth:300}} onChange={handleChange("reason")}></input>
           </div><div style={{width:'100%'}}/>
-          <div style={{marginTop:0}}>
+          <div style={{marginTop:0, padding: 10}}>
               <label>Notes: </label>
               <input type="text" name="notes"  style={{maxWidth:300}} onChange={handleChange("notes")}></input>
           </div><div style={{width:'100%'}}/>
-          <div style={{marginTop:0}}>
+          <div style={{marginTop:0, padding: 10}}>
               <label></label>
-              <input style={{maxWidth:'50%', marginLeft:'auto', marginRight:'auto'}} type="submit"></input>
+              <input style={{marginLeft:'auto', marginRight:'auto'}} type="submit"></input>
           </div><div style={{width:'100%'}}/>
         </form>
     );
