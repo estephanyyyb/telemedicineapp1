@@ -103,6 +103,7 @@ const FormFunction = (props) => {
         }).catch(err => {
             console.error(err);
         });
+        alert('Appointment Requested.')
     }
 
     return (
