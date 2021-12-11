@@ -23,6 +23,8 @@ const listAppointments = `query listAppointments {
   }
 }`;
 
+var users;
+
 const initialState = { id: '', patient: '', doctor: '', date: '', reason: '', notes: '', approval: ''};
 var currentIndex = 0;
 
@@ -38,7 +40,7 @@ function Appointments(props){
   async function fetchUsers() {
       try {
         const userData = await API.graphql(graphqlOperation(listAppointments));
-        const users = userData.data.listAppointments.items;
+        users = userData.data.listAppointments.items;
 
         console.log(users);
         setUsers(users);
@@ -363,6 +365,20 @@ function CreateNurseApptList(props) {
 
 function approve(mess) {
   if(mess.children[0].data === 'Approve') {
+    const appointmentToUpdate = users.find(element => element.id === mess.attribs.id);
+    console.log(appointmentToUpdate);
+    const apptUpdate = {id: appointmentToUpdate.id, patient: appointmentToUpdate.patient, doctor: appointmentToUpdate.doctor, approval: true, date: appointmentToUpdate.date, reason: appointmentToUpdate.reason, notes: appointmentToUpdate.notes}
+
+    const mutation = `
+    mutation MyMutation {
+      updateAppointments(input: {approval: true, id:\"` + apptUpdate.id + `\", date:\"` +  apptUpdate.date + `\", doctor: \"` + apptUpdate.doctor + `\", notes: \"`+ apptUpdate.notes + `\", patient: \"`+ apptUpdate.patient + `\", reason: \"`+ apptUpdate.reason +`\"}) {
+        id
+      }
+    }
+    `;
+
+    API.graphql(graphqlOperation(mutation));
+
     alert('Approved');
   } else {
     alert('Denied');
