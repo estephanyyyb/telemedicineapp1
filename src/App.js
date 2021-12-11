@@ -392,9 +392,9 @@ const App = () => {
           <Route path="/report/patient2">
             <PatientReport2 currentUser={user} patientData={user.attributes} />
           </Route>
-          {/* <Route path="/reports">
+          <Route path="/reports">
             <ListOfPatientReports currentUser={user} />
-          </Route> */}
+          </Route>
           <Route path="/appointments">
             <Appointments currentUser={user} patientData={user.attributes} />
           </Route>
